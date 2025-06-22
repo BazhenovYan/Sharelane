@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class SignUpTest {
+
     @Test
     public void test() {
         WebDriver driver = new ChromeDriver();
