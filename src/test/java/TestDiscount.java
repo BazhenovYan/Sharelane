@@ -85,8 +85,3 @@ public class TestDiscount {
         softAssert.assertAll();
     }
 }
-// https://sharelane.com/cgi-bin/register.py?page=2&zip_code=11111&first_name=Yan&last_name=Baz&email=yan%40yan.su&password1=1234567qwerty&password2=1234567qwerty
-// /html/body/center/table/tbody/tr[6]/td/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/b
-// /html/body/center/table/tbody/tr[6]/td/table/tbody/tr[4]/td/table/tbody/tr[2]/td[2]
-// https://www.sharelane.com/cgi-bin/main.py
-// value=Login

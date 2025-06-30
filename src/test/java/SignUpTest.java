@@ -1,8 +1,9 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
 import java.time.Duration;
 
 public class SignUpTest {
@@ -10,6 +11,8 @@ public class SignUpTest {
     @Test
     public void test() {
         WebDriver driver = new ChromeDriver();
+        SoftAssert softAssert = new SoftAssert();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get("https://sharelane.com/cgi-bin/register.py");
         driver.findElement(By.name("zip_code")).sendKeys("11111");
@@ -21,7 +24,7 @@ public class SignUpTest {
         driver.findElement(By.name("password2")).sendKeys("1234567qwerty");
         driver.findElement(By.cssSelector("[value=Register]")).click();
         String confirmationMessage = driver.findElement(By.cssSelector("[class=confirmation_message]")).getText();
-        Assert.assertEquals(confirmationMessage, "Account is created!");
+        softAssert.assertEquals(confirmationMessage, "Account is created!");
         driver.quit();
     }
 }
